@@ -5,12 +5,15 @@ interface RootLayoutProps {
   children: ReactNode | ReactNode[];
 }
 
-const useStyles = createStyles((theme) => ({
-  root: {
-    backgroundColor:
-      theme.colorScheme === 'light' ? theme.colors.gray[7] : theme.colors.dark[5],
-  },
-}));
+const useStyles = createStyles((theme) => {
+  console.log(theme);
+  return {
+    root: {
+      backgroundColor:
+        theme.colorScheme === 'light' ? theme.colors.blue[2] : theme.colors.dark[5],
+    },
+  };
+});
 
 const RootLayout: FC<RootLayoutProps> = ({ children }) => {
   const { classes } = useStyles();

@@ -1,6 +1,6 @@
-import { ColorScheme, Global, MantineProvider } from '@mantine/core';
-import { RootLayout } from 'components';
-import { useTheme } from 'hooks';
+import { GlobalStyle, RootLayout } from '@core/components';
+import { useTheme } from '@core/hooks';
+import { ColorScheme, MantineProvider } from '@mantine/core';
 import Main from 'pages/Main';
 import React, { useState } from 'react';
 
@@ -10,30 +10,7 @@ function App() {
 
   return (
     <MantineProvider theme={theme}>
-      <Global
-        styles={(theme) => ({
-          '*, *::before, *::after': {
-            boxSizing: 'border-box',
-          },
-
-          html: {
-            margin: 0,
-            padding: 0,
-          },
-
-          body: {
-            ...theme.fn.fontStyles(),
-            backgroundColor:
-              theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.white,
-            color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.black,
-            lineHeight: theme.lineHeight,
-            minWidth: '100%',
-            minHeight: '100%',
-            margin: 0,
-            padding: 0,
-          },
-        })}
-      />
+      <GlobalStyle />
       <RootLayout>
         <Main />
       </RootLayout>
