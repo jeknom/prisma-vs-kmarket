@@ -1,11 +1,11 @@
-import { Center, Title } from '@mantine/core';
+import { Text } from '@mantine/core';
 import React, { FC } from 'react';
 
 const Main: FC = () => {
   return (
-    <Center>
-      <Title>Prisma vs. K-Market</Title>
-    </Center>
+    <>
+      <Text>This will be the content and show price comparisons</Text>
+    </>
   );
 };
 

@@ -1,4 +1,4 @@
 import GlobalStyle from './GlobalStyle';
-import RootLayout from './RootLayout';
+import Section from './Section';
 
-export { GlobalStyle, RootLayout };
+export { GlobalStyle, Section };

@@ -1,4 +1,4 @@
-import { GlobalStyle, RootLayout } from '@core/components';
+import { GlobalStyle, Section } from '@core/components';
 import { useTheme } from '@core/hooks';
 import { ColorScheme, MantineProvider } from '@mantine/core';
 import Main from 'pages/Main';
@@ -11,9 +11,12 @@ function App() {
   return (
     <MantineProvider theme={theme}>
       <GlobalStyle />
-      <RootLayout>
-        <Main />
-      </RootLayout>
+      <Section mt={60}>
+        <Section.Header>Add search bar here</Section.Header>
+        <Section.Content>
+          <Main />
+        </Section.Content>
+      </Section>
     </MantineProvider>
   );
 }
