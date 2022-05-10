@@ -1,3 +1,4 @@
+import { getDefaultBackgroundColor } from '@core/utils';
 import { createStyles, Divider, Group, GroupProps, Title } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
 import React, { FC, ReactNode } from 'react';
@@ -12,8 +13,7 @@ const useStyles = createStyles((theme) => {
       width: '100%',
       borderTopLeftRadius: theme.radius.sm,
       borderTopRightRadius: theme.radius.sm,
-      backgroundColor:
-        theme.colorScheme === 'light' ? theme.colors.teal[2] : theme.colors.dark[6],
+      backgroundColor: getDefaultBackgroundColor(theme, 1),
     },
   };
 });

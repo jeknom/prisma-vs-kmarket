@@ -1,3 +1,9 @@
 import findReactChildByType from './findReactChildByType';
+import getDefaultBackgroundColor from './getDefaultBackgroundColor';
+import getStorybookPathForCoreComponent from './getStorybookPathForCoreComponent';
 
-export { findReactChildByType };
+export {
+  findReactChildByType,
+  getDefaultBackgroundColor,
+  getStorybookPathForCoreComponent,
+};

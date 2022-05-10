@@ -1,0 +1,2 @@
+export const DARK_BACKGROUND_COLOR_INDEX = 5;
+export const LIGHT_BACKGROUND_COLOR_INDEX = 1;

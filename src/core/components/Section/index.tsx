@@ -1,4 +1,4 @@
-import { findReactChildByType } from '@core/utils';
+import { findReactChildByType, getDefaultBackgroundColor } from '@core/utils';
 import { createStyles, Stack, StackProps } from '@mantine/core';
 import React, { FC, ReactNode } from 'react';
 
@@ -17,8 +17,7 @@ export interface SectionProps {
 const useStyles = createStyles((theme) => {
   return {
     root: {
-      backgroundColor:
-        theme.colorScheme === 'light' ? theme.colors.teal[1] : theme.colors.dark[5],
+      backgroundColor: getDefaultBackgroundColor(theme),
       borderRadius: theme.radius.sm,
       width: 'calc(100% - 260px)',
       maxWidth: 820,
