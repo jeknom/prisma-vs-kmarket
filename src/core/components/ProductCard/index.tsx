@@ -1,15 +1,8 @@
 import { getDefaultBackgroundColor } from '@core/utils';
-import {
-  Badge,
-  Card,
-  CardProps,
-  createStyles,
-  Group,
-  Stack,
-  Text,
-  Title,
-} from '@mantine/core';
+import { Badge, Card, createStyles, Group, Stack, Text, Title } from '@mantine/core';
 import React, { FC } from 'react';
+
+import { Appear } from '../Animations';
 
 export interface ProductCardProps {
   currencySymbol: string;
@@ -22,39 +15,41 @@ export interface ProductCardProps {
 
 const useStyles = createStyles((theme, isBestOffer: boolean) => ({
   root: {
+    maxWidth: 360,
+  },
+  card: {
     backgroundColor: isBestOffer
       ? theme.colors.orange[3]
       : getDefaultBackgroundColor(theme),
     color: isBestOffer ? theme.colors.indigo[5] : undefined,
-    maxWidth: 360,
   },
 }));
 
-const ProductCard: FC<ProductCardProps & CardProps<any>> = ({
-  className,
+const ProductCard: FC<ProductCardProps> = ({
   currencySymbol,
   name,
   price,
   description,
   isDiscounted = false,
   isBestOffer = false,
-  ...rest
 }) => {
-  const { classes, cx } = useStyles(isBestOffer);
+  const { classes } = useStyles(isBestOffer);
 
   return (
-    <Card {...rest} className={cx(className, classes.root)} shadow="sm">
-      <Stack spacing={8}>
-        <Group align="center" position="apart">
-          <Title order={4}>{name}</Title>
-          <Badge color={isDiscounted ? 'pink' : 'blue'}>
-            {price}
-            {currencySymbol}
-          </Badge>
-        </Group>
-        {description && <Text>{description}</Text>}
-      </Stack>
-    </Card>
+    <Appear className={classes.root}>
+      <Card className={classes.card} shadow="sm">
+        <Stack spacing={8}>
+          <Group align="center" position="apart">
+            <Title order={4}>{name}</Title>
+            <Badge color={isDiscounted ? 'pink' : 'blue'}>
+              {price}
+              {currencySymbol}
+            </Badge>
+          </Group>
+          {description && <Text>{description}</Text>}
+        </Stack>
+      </Card>
+    </Appear>
   );
 };
 
