@@ -1,0 +1,38 @@
+import { buildStorybookPath, StorybookSection } from '@core/utils';
+import { DocumentOutput } from '@core/components';
+
+<Meta
+    title={buildStorybookPath(StorybookSection.COMPONENTS, 'GlobalStyle')}
+    component={DocumentOutput}
+/>
+
+# GlobalStyle
+
+This component applies global styling to the page. There should ever only be one instance of this at the root level of the application.
+
+```tsx
+import { GlobalStyle, Section } from '@core/components';
+import { useTheme } from '@core/hooks';
+import { ColorScheme, MantineProvider } from '@mantine/core';
+import Main from 'pages/Main';
+import React, { useState } from 'react';
+
+function App() {
+  const [colorScheme] = useState<ColorScheme>('dark');
+  const theme = useTheme({ colorScheme });
+
+  return (
+    <MantineProvider theme={theme}>
+      <GlobalStyle />
+      <Section mt={60}>
+        <Section.Header>Add search bar here</Section.Header>
+        <Section.Content>
+          <Main />
+        </Section.Content>
+      </Section>
+    </MantineProvider>
+  );
+}
+
+export default App;
+```

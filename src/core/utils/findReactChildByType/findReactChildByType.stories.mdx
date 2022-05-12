@@ -1,0 +1,43 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { buildStorybookPath, StorybookSection } from '@core/utils';
+import { DocumentOutput } from '@core/components';
+
+<Meta
+    title={buildStorybookPath(StorybookSection.UTILS, 'findReactChildByType')}
+    component={DocumentOutput}
+/>
+
+# findReactChildByType
+
+Given the children of a React element and an element to look for, will return the child if it is among the children. This is particularly useful if you are developing a component that uses subcomponents.
+
+## Example
+
+Imagine we had a list component that takes a list item as subcomponent:
+
+```typescript
+import { findReactChildByType } from '@core/utils';
+import React, { FC, ReactNode } from 'react';
+
+import ListItem, { ListItemProps } from './ListItem';
+
+export interface ListSubcomponents {
+  Item: FC<ListItemProps>;
+}
+
+export interface ListProps {
+  children?: ReactNode | ReactNode[];
+}
+
+const List: FC<ListProps> & ListSubcomponents = ({ children }) => {
+  return (
+    <ul>
+      {findReactChildByType(children, ListItem)}
+    </ul>
+  );
+};
+
+List.Item = ListItem;
+
+export default List;
+```

@@ -1,0 +1,29 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { buildStorybookPath, StorybookSection } from '@core/utils';
+import { DocumentOutput } from '@core/components';
+
+<Meta
+    title={buildStorybookPath(StorybookSection.UTILS, 'buildStorybookPath')}
+    component={DocumentOutput}
+/>
+
+# buildStorybookPath
+
+Use this function to build a path for a Storybook doc.
+
+## Code
+
+```typescript
+import { buildStorybookPath, StorybookSection } from '@core/utils';
+
+const docPathForMyAwesomeComponent = buildStorybookPath(
+    StorybookSection.COMPONENTS,
+    'MyAwesomeComponent'
+);
+
+console.log(docPathForMyAwesomeComponent);
+```
+
+## Output
+
+<DocumentOutput text={buildStorybookPath(StorybookSection.UTILS, 'MyAwesomeComponent')} />

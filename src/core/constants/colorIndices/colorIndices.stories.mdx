@@ -1,0 +1,19 @@
+import { Meta } from '@storybook/addon-docs';
+import { buildStorybookPath, StorybookSection } from '@core/utils';
+
+<Meta title={buildStorybookPath(StorybookSection.CONSTANTS, 'colorIndices')} />
+
+# colorIndices
+
+Contains constant values for the color indices that are used when accessing Mantine color theme values.
+
+```typescript
+import { colorIndices } from '@core/constants';
+import { createStyles } from '@mantine/core';
+
+const useStyles = createStyles((theme) => ({
+  element: {
+    backgroundColor: theme.colors.dark[colorIndices.PRIMARY_BACKGROUND_COLOR_INDEX]
+  },
+}));
+```

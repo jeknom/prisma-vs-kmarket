@@ -1,5 +1,11 @@
 import React, { FC, ReactNode } from 'react';
 
+/**
+ * This function is used to find a child component of specific type. This is useful when you are developing a component which has subcomponents.
+ * @param children The children property of a React component. This will be iterated over to find the child.
+ * @param component The react component you would like to find from the children prop.
+ * @returns The child you are looking for or null if its not found.
+ */
 const findReactChildByType = <T = undefined>(
   children: ReactNode,
   component: FC | FC<T>,

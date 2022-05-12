@@ -1,9 +1,13 @@
+import buildStorybookPath, { StorybookSection } from './buildStorybookPath';
 import findReactChildByType from './findReactChildByType';
-import getDefaultBackgroundColor from './getDefaultBackgroundColor';
-import getStorybookPathForCoreComponent from './getStorybookPathForCoreComponent';
+import getDefaultBackgroundColor, {
+  BackgroundColorVariant,
+} from './getDefaultBackgroundColor';
 
 export {
+  BackgroundColorVariant,
+  buildStorybookPath,
   findReactChildByType,
   getDefaultBackgroundColor,
-  getStorybookPathForCoreComponent,
+  StorybookSection,
 };

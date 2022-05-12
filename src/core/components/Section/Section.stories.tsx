@@ -1,11 +1,11 @@
 import { Section as SectionComponent } from '@core/components';
-import { getStorybookPathForCoreComponent } from '@core/utils';
+import { buildStorybookPath, StorybookSection } from '@core/utils';
 import { Text } from '@mantine/core';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
 
 export default {
-  title: getStorybookPathForCoreComponent('Section'),
+  title: buildStorybookPath(StorybookSection.COMPONENTS, 'Section'),
   component: SectionComponent,
   subcomponents: { Header: SectionComponent.Header },
   argTypes: {

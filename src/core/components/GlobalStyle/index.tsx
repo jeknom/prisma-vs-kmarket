@@ -1,4 +1,5 @@
 import { getDefaultBackgroundColor } from '@core/utils';
+import { BackgroundColorVariant } from '@core/utils/getDefaultBackgroundColor';
 import { Global } from '@mantine/core';
 import React from 'react';
 
@@ -16,7 +17,11 @@ const GlobalStyle = () => (
 
       body: {
         ...theme.fn.fontStyles(),
-        backgroundColor: getDefaultBackgroundColor(theme, -1),
+        backgroundColor: getDefaultBackgroundColor(
+          theme,
+          BackgroundColorVariant.PRIMARY,
+          -1,
+        ),
         color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.black,
         lineHeight: theme.lineHeight,
         minWidth: '100%',

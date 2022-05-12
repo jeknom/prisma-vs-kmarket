@@ -1,10 +1,10 @@
 import { ProductCard as ProductCardComponent } from '@core/components';
-import { getStorybookPathForCoreComponent } from '@core/utils';
+import { buildStorybookPath, StorybookSection } from '@core/utils';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
 
 export default {
-  title: getStorybookPathForCoreComponent('ProductCard'),
+  title: buildStorybookPath(StorybookSection.COMPONENTS, 'ProductCard'),
   component: ProductCardComponent,
   argTypes: {
     currencySymbol: {
